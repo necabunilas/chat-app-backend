@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 //connect to db
-mongoose.connect("mongodb://localhost:27017/chatUserDB", { useUnifiedTopology: true,  useNewUrlParser: true  });
+mongoose.connect("mongodb+srv://admin:admin@cluster0-f5d15.mongodb.net/chatUserDB", { useUnifiedTopology: true,  useNewUrlParser: true  });
 
 //user schema
 const userSchema = new mongoose.Schema({
@@ -75,7 +75,7 @@ io.on('connection', (socket) => {
 
             if(result === true){
               console.log("User exists");
-                
+
               loggedUsers.push({username: username, socket: socket.id});
               console.log(loggedUsers);
               socket.emit("login", "ok");
