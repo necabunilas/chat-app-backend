@@ -44,11 +44,8 @@ const chatSchema = new mongoose.Schema({
 const User = new mongoose.model("User", userSchema);
 const Chat = new mongoose.model("Chat", chatSchema);
 
-app.post("/login", function(req,res){
-
-})
-
-app.get("/login", function(req,res){
+app.get("/", function(req,res){
+  res.send("Listening for messages!");
 })
 
 //localost listener
