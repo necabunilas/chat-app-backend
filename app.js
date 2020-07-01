@@ -1,5 +1,5 @@
 //jshint esversion:6
-require("dotenv").config;
+require("dotenv").config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 });
 
 //connect to db
-mongoose.connect("mongodb+srv://admin:admin@cluster0-f5d15.mongodb.net/chatUserDB", { useUnifiedTopology: true,  useNewUrlParser: true  });
+mongoose.connect(process.env.DB_HOST, { useUnifiedTopology: true,  useNewUrlParser: true  });
 
 //user schema
 const userSchema = new mongoose.Schema({
